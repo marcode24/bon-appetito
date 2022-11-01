@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&display=swap");
+
+@mixin fs-1 {
+  font-size: 46px;
+}
+
+@mixin fs-2 {
+  font-size: 36px;
+}
+
+@mixin fs-3 {
+  font-size: 28px;
+}
+
+@mixin fs-4 {
+  font-size: 22px;
+}
+
+@mixin fs-5 {
+  font-size: 18px;
+}
+
+@mixin fs-6 {
+  font-size: 16px;
+}
+
+@mixin fs-7 {
+  font-size: 12px;
+}
+
+@mixin fw-800 {
+  font-weight: 800;
+}
+
+@mixin fw-700 {
+  font-weight: 700;
+}
+
+@mixin fw-600 {
+  font-weight: 700;
+}
+
+@mixin fw-500 {
+  font-weight: 500;
+}
+
+@mixin fw-400 {
+  font-weight: 400;
+}

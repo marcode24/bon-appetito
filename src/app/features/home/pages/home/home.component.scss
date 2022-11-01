@@ -1,0 +1,123 @@
+@import 'objects/_grid.scss';
+@import 'elements/_card.scss';
+@import 'settings/_typography.scss';
+@import 'settings/_colors.scss';
+
+
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80');
+  background-color: #101010;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: screen;
+  padding: 1.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  & .text {
+    @include fw-700;
+    color: $fc-3;
+    font-size: 40px;
+    text-shadow: -2px 2px 24px rgb(0,0,0);
+  }
+
+}
+
+.container {
+  border-radius: 2rem 2rem 0 0;
+  transform: translateY(-25px);
+}
+
+.pizzas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .title {
+    @include fs-3;
+    @include fw-800;
+    color: $fc-1;
+    text-align: center;
+    width: 100%;
+  }
+
+  .cards {
+    @include grid-cards;
+
+    & .card {
+      @include card-pizza;
+
+      figure {
+        width: 80px;
+        height: 80px;
+        align-self: center;
+        border-radius: 10px;
+
+        & .pizza-image {
+          border-radius: inherit;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .pizza-name {
+        @include fs-5;
+        @include fw-600;
+        margin-top: 8px;
+        text-align: center;
+        color: var(--fc-1);
+      }
+
+      .ingredients {
+        @include fs-7;
+        @include fw-500;
+        color: var(--fc-2);
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      .options {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & .price {
+          @include fs-6;
+          @include fw-600;
+        }
+
+        & .cart {
+          @include fs-7;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 25px;
+          height: 25px;
+          color: $fc-2;
+          border-radius: 50%;
+          transition: 0.4s ease;
+        }
+
+        & .cart:hover {
+          cursor: pointer;
+          color: $fc-3;
+          background-color: $bg-hover-1;
+        }
+
+      }
+
+
+    }
+
+  }
+
+}

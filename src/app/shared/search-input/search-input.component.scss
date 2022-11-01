@@ -1,0 +1,35 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+@import 'settings/_shadows.scss';
+
+.input-group {
+  position: relative;
+}
+
+input.icon {
+  @include fw-600;
+  @include bxs-1;
+  border: none;
+  background: #fff;
+  border-radius: 12px;
+  height: 40px;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 5px 10px 45px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+input.icon ~ i {
+  top: 12px;
+  left: 16px;
+  position: absolute;
+  color: #71767b;
+  transition: 0.2s;
+}
+
+
+input.icon:focus,
+input.icon:focus ~ i {
+  color: $fc-1;
+}
