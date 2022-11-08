@@ -9,6 +9,11 @@ const routes: Routes = [
     component: FeaturesComponent,
     loadChildren: () => import('./home/home.routing').then(m => m.HomeRoutingModule),
   },
+  {
+    path: 'build',
+    component: FeaturesComponent,
+    loadChildren: () => import('./build-pizza/build-pizza.routing').then(m => m.BuildPizzaRoutingModule),
+  },
 ];
 
 @NgModule({
@@ -19,4 +24,4 @@ const routes: Routes = [
     RouterModule
   ],
 })
-export class FeaturesRoutingModule {}
+export class FeaturesRoutingModule { }

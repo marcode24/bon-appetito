@@ -9,7 +9,7 @@ import { FeaturesComponent } from './features.component';
 
 @NgModule({
   declarations: [
-    FeaturesComponent
+    FeaturesComponent,
   ],
   imports: [
     CommonModule,

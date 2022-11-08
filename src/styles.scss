@@ -29,31 +29,34 @@
   background: var(--bg-mobile);
 }
 
-.options::-webkit-scrollbar,
+.ingredients::-webkit-scrollbar,
 .mobile::-webkit-scrollbar {
   width: 4px;
   border-radius: 2.2rem;
   background-color: $bg-mobile-light;
 }
-.options::-webkit-scrollbar-track,
+
+.ingredients::-webkit-scrollbar-track,
 .mobile::-webkit-scrollbar-track {
   background-color: $bg-mobile-light;
 }
-.options::-webkit-scrollbar-thumb,
+
+.ingredients::-webkit-scrollbar-thumb,
 .mobile::-webkit-scrollbar-thumb {
   background-color: $bg-scroll;
   border-radius: 1rem;
 }
-.options::-webkit-scrollbar-thumb:hover,
+
+.ingredients::-webkit-scrollbar-thumb:hover,
 .mobile::-webkit-scrollbar-thumb:hover {
   background: $bg-scroll;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
-.options::-webkit-scrollbar-thumb:active,
+
+.ingredients::-webkit-scrollbar-thumb:active,
 .mobile::-webkit-scrollbar-thumb:active {
   background: $bg-scroll;
 }
-
 
 @media (max-width: 378px) {
   .container {
