@@ -24,7 +24,12 @@
       "dom"
     ],
     "paths": {
-      "@components/*": [ "app/core/components/*" ],
+      "@components/*": [
+        "app/core/components/*"
+      ],
+      "@interfaces/*": [
+        "app/core/interfaces/*"
+      ],
     },
   },
   "angularCompilerOptions": {

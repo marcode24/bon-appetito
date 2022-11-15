@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { ComponentsModule } from '@components/components.module';
 import { HomeModule } from './home/home.module';
+import { BuildPizzaModule } from './build-pizza/build-pizza.module';
 
 import { FeaturesComponent } from './features.component';
 
@@ -16,6 +17,7 @@ import { FeaturesComponent } from './features.component';
     RouterModule,
     ComponentsModule,
     HomeModule,
+    BuildPizzaModule
   ]
 })
 export class FeaturesModule { }

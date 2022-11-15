@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IPizza } from '@components/interfaces/pizza.interface';
 
 @Component({
   selector: 'app-build-pizza',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuildPizzaComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addPizzaToCart(newPizza: IPizza): void {
+    console.log({newPizza});
   }
 
 }

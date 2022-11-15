@@ -1,0 +1,9 @@
+<div class="quantity">
+  <button [disabled]="disable" (click)="changeQuantity(-1)" class="btn-inside">
+    <i class="fa fa-minus"></i>
+  </button>
+  <span>{{ quantity }}</span>
+  <button [disabled]="disable" (click)="changeQuantity(1)" class="btn-inside">
+    <i class="fa fa-plus"></i>
+  </button>
+</div>

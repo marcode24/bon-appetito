@@ -42,3 +42,8 @@
 @mixin btn-secondary {
   background-color: $fc-4;
 }
+
+@mixin btn-secondary-disabled {
+  cursor: not-allowed;
+  background-color: rgba($fc-4, 0.4);
+}
