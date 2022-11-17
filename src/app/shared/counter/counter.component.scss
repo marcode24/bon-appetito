@@ -13,7 +13,7 @@
     @include btn;
     @include btn-transparent;
     padding: 0;
-    width: 50px;
+    width: 40px;
 
     &:hover {
       @include btn-transparent-hover;
@@ -22,6 +22,10 @@
     &:disabled {
       background: none;
       cursor: not-allowed;
+    }
+
+    & .fa-trash-can {
+      color: $fc-1;
     }
 
   }

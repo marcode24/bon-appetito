@@ -7,12 +7,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
   @Input() disable: boolean = false;
-  quantity: number = 1;
+  @Input() cart: boolean = false;
+  @Input() quantity: number = 1;
   @Output() newQuantity: EventEmitter<number> = new EventEmitter();
+  @Output() delete: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  deleteItem(): void {
+    this.delete.emit(true);
   }
 
   changeQuantity(value: number) {

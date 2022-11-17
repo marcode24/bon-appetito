@@ -11,24 +11,30 @@ export class CartService {
   constructor() { }
 
   addItem(pizza: IPizza) {
-    this.getCart();
+    this.loadCartFromStorage();
     this.cart.items.push(pizza);
     this.saveData();
   }
 
   deletItem(index: number) {
-    this.getCart();
+    this.loadCartFromStorage();
     this.cart.items.splice(index, 1);
     this.saveData();
+  }
+
+  clearCart(): void {
+    this.cart.items = [];
+    this.cart.total = 0;
+    Storage.deleteLocalStorage('cart');
   }
 
   saveData(): void {
     this.updateTotal();
     Storage.saveLocalStorage('cart', JSON.stringify(this.cart));
-    this.getCart();
+    this.loadCartFromStorage();
   }
 
-  getCart(): void {
+  loadCartFromStorage(): void {
     this.cart = JSON.parse(Storage.getItem('cart')) as ICart || { items: [], total: 0 };
   }
 
@@ -36,6 +42,17 @@ export class CartService {
     this.cart.total = 0;
     this.cart.items.forEach(item => this.cart.total += item.price * item.quantity);
   }
+
+  changeQuantity(index: number, quantity: number): void {
+    this.cart.items[index].quantity = quantity;
+    this.saveData();
+  }
+
+  get getCart(): ICart {
+    this.loadCartFromStorage();
+    return this.cart;
+  }
+
 
 
 }
