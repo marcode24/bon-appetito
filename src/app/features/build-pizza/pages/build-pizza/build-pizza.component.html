@@ -1,5 +1,16 @@
 <div class="container overflow">
-  <app-preview-pizza></app-preview-pizza>
+  <div class="builder">
+    <div class="options-header">
+      <app-btn-home></app-btn-home>
+      <span class="title">Personaliza tu Pizza</span>
+      <button routerLink="/cart" class="btn-transparent" [class.text-secondary]="cartHasItems"
+        [class.fit-button]="cartHasItems">
+        <i class="fa fa-basket-shopping"></i>
+        <span *ngIf="cartHasItems" class="quantity">{{ cartItems }}</span>
+      </button>
+    </div>
+    <app-preview-pizza></app-preview-pizza>
+  </div>
   <app-options-pizza (newPizza)=" addPizzaToCart($event)">
   </app-options-pizza>
 </div>

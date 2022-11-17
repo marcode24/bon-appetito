@@ -12,14 +12,21 @@ import { BuilderPizzaService } from '../../services/builder-pizza.service';
 export class OptionsPizzaComponent implements OnInit {
   @Output() newPizza: EventEmitter<any> = new EventEmitter();
 
-  ingredients = this.builderPizzaService.getAllIngredients;
-  sizes = this.builderPizzaService.getAllSizes;
+  ingredients: IIngredient[];
+  sizes: ISize[];
   itemSizeSelected: number = 0;
 
   constructor(private builderPizzaService: BuilderPizzaService) { }
 
   ngOnInit(): void {
-    this.builderPizzaService.changeTotal(this.sizes[0].price);
+    this.loadData();
+  }
+
+  loadData(): void {
+    this.ingredients = this.builderPizzaService.getAllIngredients;
+    this.sizes = this.builderPizzaService.getAllSizes;
+    this.itemSizeSelected = 0;
+    this.builderPizzaService.changeTotal(this.sizes[this.itemSizeSelected].price);
   }
 
   changeSize(index: number) {
@@ -43,7 +50,7 @@ export class OptionsPizzaComponent implements OnInit {
     return selectedIngredientsName.length === getLimitIngredients && !selectedIngredientsName.includes(ingredientName);
   }
 
-  builSizeName(index: number): string {
+  buildSizeName(index: number): string {
     const { sizeName, slices, size, measurement } = this.sizes[index];
     return `${sizeName}: ${slices} Rebanada${slices > 1 ? 's': ''} (${size} ${measurement})`;
   }
@@ -70,6 +77,8 @@ export class OptionsPizzaComponent implements OnInit {
       size: this.getSize(this.itemSizeSelected)
     };
     this.newPizza.emit(newPizza);
+    this.builderPizzaService.resetBuilder();
+    this.loadData();
   }
 
 }

@@ -1,6 +1,6 @@
 <div class="container overflow">
   <div class="options-header">
-    <i class="fa fa-arrow-left"></i>
+    <app-btn-home></app-btn-home>
     <span class="title">Tu canasta</span>
     <button [disabled]="!cart.items || cart.items.length === 0" (click)="clearCart()"
       class="btn-transparent text-secondary">Vaciar</button>

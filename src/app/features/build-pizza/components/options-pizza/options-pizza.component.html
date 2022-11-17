@@ -4,10 +4,10 @@
       <li class="item sticky">Elige el tamaño</li>
       <li class="item" *ngFor="let size of sizes; let i = index">
         <label>
-          <input type="radio" name="radio" [checked]="i === 0" (change)="changeSize(i)" />
+          <input type="radio" name="radio" [checked]="i === itemSizeSelected" (change)="changeSize(i)" />
           <div class="label-text">
             <div class="ingredient">
-              <span class="name">{{ builSizeName(i) }}</span>
+              <span class="name">{{ buildSizeName(i) }}</span>
               <span class="price">+ {{ size.price | currency: '$' }}</span>
             </div>
           </div>
@@ -20,7 +20,7 @@
       <li class="item" *ngFor="let ingredient of ingredients">
         <label [class.disabled]="hasSelectedEnoughItems(ingredient.name)">
           <input [disabled]="hasSelectedEnoughItems(ingredient.name)" type="checkbox" name="check"
-            (change)="changeSelection(ingredient)" />
+            (change)="changeSelection(ingredient)" [checked]="ingredient.selected" />
           <div class="label-text">
             <div class="ingredient">
               <span class="name">{{ingredient.name}}</span>

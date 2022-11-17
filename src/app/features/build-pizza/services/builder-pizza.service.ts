@@ -12,6 +12,7 @@ interface IEventIngredient {
 export class BuilderPizzaService {
 
   showIngredient: EventEmitter<IEventIngredient> = new EventEmitter();
+  hideAllIngredients: EventEmitter<boolean> = new EventEmitter();
 
   ingredientsSelected: IIngredient[] = [];
   private limitIngredients: number = 4;
@@ -41,6 +42,13 @@ export class BuilderPizzaService {
   ];
 
   constructor() { }
+
+  resetBuilder(): void {
+    this.ingredients.map(el => el.selected = false);
+    this.quantity = 1;
+    this.totalPizza = 0;
+    this.hideAllIngredients.emit(true);
+  }
 
   changeSelection(ingredient: IIngredient): void {
     const { selector, name: ingredientName, price } = ingredient;
@@ -96,4 +104,5 @@ export class BuilderPizzaService {
   get getQuantity(): number {
     return this.quantity;
   }
+
 }

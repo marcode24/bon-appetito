@@ -21,4 +21,12 @@ export class BuildPizzaComponent implements OnInit {
     this.cartService.addItem(newPizza);
   }
 
+  get cartHasItems(): boolean {
+    return this.cartService.getCart.items.length > 0;
+  }
+
+  get cartItems(): number {
+    return this.cartService.getCart.items.length;
+  }
+
 }

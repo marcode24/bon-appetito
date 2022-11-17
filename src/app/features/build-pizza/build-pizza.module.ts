@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ComponentsModule } from './components/components.module';
+import { SharedModule } from 'app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 import { BuildPizzaComponent } from './pages/build-pizza/build-pizza.component';
 
@@ -12,6 +14,8 @@ import { BuildPizzaComponent } from './pages/build-pizza/build-pizza.component';
   imports: [
     CommonModule,
     ComponentsModule,
+    SharedModule,
+    RouterModule
   ]
 })
 export class BuildPizzaModule { }
