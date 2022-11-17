@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { IIngredient, ISize } from '@components/interfaces/pizza.interface';
+import { IIngredient, ISize } from '@interfaces/pizza.interface';
 
 interface IEventIngredient {
   selector: string;

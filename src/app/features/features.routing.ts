@@ -14,6 +14,11 @@ const routes: Routes = [
     component: FeaturesComponent,
     loadChildren: () => import('./build-pizza/build-pizza.routing').then(m => m.BuildPizzaRoutingModule),
   },
+  {
+    path: 'cart',
+    component: FeaturesComponent,
+    loadChildren: () => import('./cart/cart.routing').then(m => m.CartRoutingModule),
+  },
 ];
 
 @NgModule({

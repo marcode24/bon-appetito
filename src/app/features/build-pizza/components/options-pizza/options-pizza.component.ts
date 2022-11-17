@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
-import { IIngredient, IPizza, ISize } from '@components/interfaces/pizza.interface';
+import { IIngredient, IPizza, ISize } from '@interfaces/pizza.interface';
 
 import { BuilderPizzaService } from '../../services/builder-pizza.service';
 
@@ -62,10 +62,11 @@ export class OptionsPizzaComponent implements OnInit {
 
   addPizzaToCart(): void {
     if(this.builderPizzaService.selectedIngredientsName.length < 1) return;
+    const {  selectedIngredients, getTotalPizza, getQuantity } = this.builderPizzaService;
     const newPizza: IPizza = {
-      ingredients: this.builderPizzaService.selectedIngredients,
-      price: this.builderPizzaService.getTotalPizza,
-      quantity: this.builderPizzaService.getQuantity,
+      ingredients: selectedIngredients,
+      price: getTotalPizza / getQuantity,
+      quantity: getQuantity,
       size: this.getSize(this.itemSizeSelected)
     };
     this.newPizza.emit(newPizza);

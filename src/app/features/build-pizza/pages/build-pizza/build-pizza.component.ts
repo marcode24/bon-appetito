@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IPizza } from '@components/interfaces/pizza.interface';
+
+import { CartService } from '@services/cart.service';
+
+import { IPizza } from '@interfaces/pizza.interface';
 
 @Component({
   selector: 'app-build-pizza',
@@ -9,13 +12,13 @@ import { IPizza } from '@components/interfaces/pizza.interface';
 export class BuildPizzaComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
   }
 
   addPizzaToCart(newPizza: IPizza): void {
-    console.log({newPizza});
+    this.cartService.addItem(newPizza);
   }
 
 }

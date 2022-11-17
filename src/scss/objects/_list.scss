@@ -1,0 +1,20 @@
+@import 'settings/_colors.scss';
+
+
+@mixin ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+@mixin li {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: 0.4s;
+  color: $fc-1-light;
+  font-size: 18px;
+}

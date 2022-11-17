@@ -1,0 +1,37 @@
+<div class="container overflow">
+  <div class="options-header">
+    <i class="fa fa-arrow-left"></i>
+    <span class="title">Tu canasta</span>
+    <button class="btn-transparent text-secondary">Vaciar</button>
+  </div>
+
+  <div class="items-wrapper">
+    <div class="items">
+      <ul>
+        <li class="item" *ngFor="let i of [{}, {}, {}, {}, {}, {}, {}, {}]">
+          <div class="description">
+            <div class="pizza-name">Pizza Familiar - 8 Rebanadas</div>
+            <div class="ingredients">
+              <input id="checkbox" type="checkbox" class="checkbox" aria-hidden="true">
+              <p class="text">pepperoni, fadsfads, fasdfads, </p>
+              <label for="checkbox" class="ingredients-label" data-ingredients="ver más" data-read-less="ver menos"
+                aria-hidden="true"></label>
+            </div>
+            <div class="price">$8934.00</div>
+          </div>
+          <app-counter></app-counter>
+        </li>
+      </ul>
+    </div>
+    <div class="options">
+      <div class="total-container">
+        <span class="title">$2320.00</span>
+        <span class="subtitle">Total a pagar</span>
+      </div>
+      <button class="btn-add">
+        Hacer Pedido
+      </button>
+    </div>
+  </div>
+
+</div>
