@@ -12,11 +12,13 @@ const routes: Routes = [
   {
     path: 'build',
     component: FeaturesComponent,
+    data: { animation: 'bottom' },
     loadChildren: () => import('./build-pizza/build-pizza.routing').then(m => m.BuildPizzaRoutingModule),
   },
   {
     path: 'cart',
     component: FeaturesComponent,
+    data: { animation: 'bottom' },
     loadChildren: () => import('./cart/cart.routing').then(m => m.CartRoutingModule),
   },
 ];

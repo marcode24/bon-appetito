@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BuildPizzaModule } from './build-pizza/build-pizza.module';
 import { CartModule } from './cart/cart.module';
@@ -15,6 +16,7 @@ import { FeaturesComponent } from './features.component';
   ],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     RouterModule,
     ComponentsModule,
     HomeModule,
