@@ -1,0 +1,12 @@
+<div class="quantity">
+  <button *ngIf="!cart || quantity > 1" [disabled]="disable" (click)="changeQuantity(-1)" class="btn-inside">
+    <i class="fa fa-minus"></i>
+  </button>
+  <button *ngIf="cart && quantity === 1" (click)="deleteItem()" class="btn-inside">
+    <i class="fa fa-trash-can"></i>
+  </button>
+  <span>{{ quantity }}</span>
+  <button [disabled]="disable" (click)="changeQuantity(1)" class="btn-inside">
+    <i class="fa fa-plus"></i>
+  </button>
+</div>

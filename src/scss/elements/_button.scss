@@ -1,0 +1,48 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+
+@mixin btn {
+  @include fw-700;
+  @include fs-6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 1.2rem;
+  color: #4d4d4d;
+  width: fit-content;
+  height: 40px;
+  transition: 0.3s;
+  color: $fc-3;
+}
+
+@mixin btn-transparent {
+  color: $fc-1-light;
+  background-color: transparent;
+}
+
+@mixin btn-transparent-hover {
+  background-color: #e7e7e7;
+}
+
+@mixin btn-primary {
+  background-color: $fc-1;
+}
+
+@mixin btn-secondary {
+  background-color: $fc-4;
+}
+
+@mixin btn-secondary-disabled {
+  cursor: not-allowed;
+  background-color: rgba($fc-4, 0.4);
+}

@@ -1,0 +1,41 @@
+<div class="items-wrapper">
+  <div class="items">
+    <ul>
+      <li class="item sticky">Elige el tamaño</li>
+      <li class="item" *ngFor="let size of sizes; let i = index">
+        <label>
+          <input type="radio" name="radio" [checked]="i === itemSizeSelected" (change)="changeSize(i)" />
+          <div class="label-text">
+            <div class="ingredient">
+              <span class="name">{{ buildSizeName(i) }}</span>
+              <span class="price">+ {{ size.price | currency: '$' }}</span>
+            </div>
+          </div>
+        </label>
+      </li>
+      <li class="item sticky">
+        Acompaña tu pizza con
+        <span class="subtitle">Selecciona máximo 4 opciones</span>
+      </li>
+      <li class="item" *ngFor="let ingredient of ingredients">
+        <label [class.disabled]="hasSelectedEnoughItems(ingredient.name)">
+          <input [disabled]="hasSelectedEnoughItems(ingredient.name)" type="checkbox" name="check"
+            (change)="changeSelection(ingredient)" [checked]="ingredient.selected" />
+          <div class="label-text">
+            <div class="ingredient">
+              <span class="name">{{ingredient.name}}</span>
+              <span class="price">+ {{ ingredient.price | currency: '$' }}</span>
+            </div>
+          </div>
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="options">
+    <app-counter style="flex-grow: 1;" [disable]="hasSelectedAtLeastOneIngredient"
+      (newQuantity)="changeQuantity($event)"></app-counter>
+    <button (click)="addPizzaToCart()" class="btn-add" [disabled]="hasSelectedAtLeastOneIngredient">
+      Agregar {{ getTotalPizza | currency: '$'}}
+    </button>
+  </div>
+</div>

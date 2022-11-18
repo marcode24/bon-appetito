@@ -1,0 +1,40 @@
+<div class="container overflow">
+  <div class="options-header">
+    <app-btn-home></app-btn-home>
+    <span class="title">Tu canasta</span>
+    <button [disabled]="!cart.items || cart.items.length === 0" (click)="clearCart()"
+      class="btn-transparent text-secondary">Vaciar</button>
+  </div>
+
+  <div class="items-wrapper">
+    <div class="items">
+      <ul *ngIf="cart.items && cart.items.length >= 1">
+        <li class="item" *ngFor="let item of cart.items; let i = index">
+          <div class="description">
+            <div class="pizza-name">{{buildSizeName(i)}}</div>
+            <div class="ingredients">
+              <input [id]="'checkbox'+i" type="checkbox" class="checkbox" aria-hidden="true">
+              <p class="text">{{ buildDescription(i) }}</p>
+              <label *ngIf="item.ingredients.length > 3" [for]="'checkbox'+i" class="ingredients-label"
+                data-ingredients="ver más" data-read-less="ver menos" aria-hidden="true"></label>
+            </div>
+            <div class="price">{{ item.price | currency: '$ ' }}</div>
+          </div>
+          <app-counter [cart]="true" [quantity]="item.quantity" (newQuantity)="changeQuantity($event, i)"
+            (delete)="deleteItem(i)">
+          </app-counter>
+        </li>
+      </ul>
+    </div>
+    <div class="options">
+      <div class="total-container">
+        <span class="title">{{ cart.total | currency: '$ ' }}</span>
+        <span class="subtitle">Total a pagar</span>
+      </div>
+      <button class="btn-add" [disabled]="!cart.items || cart.items.length === 0">
+        Realizar Pedido
+      </button>
+    </div>
+  </div>
+
+</div>

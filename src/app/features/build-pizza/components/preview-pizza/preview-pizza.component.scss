@@ -1,0 +1,456 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+@import 'elements/_button.scss';
+
+@mixin ingredient {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 0;
+}
+
+@mixin ingredient-image($image, $size) {
+  background-image: url($image);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: $size;
+  width: $size;
+}
+
+@mixin ingredient-position($left, $top) {
+  left: $left;
+  top: $top;
+}
+
+.builder {
+  width: 100%;
+  height: 100%;
+
+
+  & .pizza-wrapper {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    & .edge {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      max-height: 295px;
+      max-width: 295px;
+      min-height: 260px;
+      min-width: 260px;
+      border-radius: 50%;
+      background-color: #d38d2e;
+      box-shadow: -4px -4px 11px 1px rgba(0, 0, 0, 0.39);
+      -webkit-box-shadow: -4px -4px 11px 1px rgba(0, 0, 0, 0.39);
+      -moz-box-shadow: -4px -4px 11px 1px rgba(0, 0, 0, 0.39);
+    }
+
+    & .pizza {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      max-height: 260px;
+      max-width: 260px;
+      min-height: 240px;
+      min-width: 240px;
+      border-radius: 50%;
+      background-color: #f6c220;
+
+      & .show {
+        opacity: 1 !important;
+        transition: 0.3s ease;
+      }
+
+      & .olives {
+        @include ingredient;
+
+        & .olive {
+          @include ingredient-image('/assets/images/ingredients/olives.png', 1.5rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(4.5rem, 8.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(5.5rem, 2.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(1.5rem, 3.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(12rem, 9.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(10.5rem, 12.5rem);
+          }
+
+          &:nth-child(6) {
+            @include ingredient-position(7.5rem, 5.5rem);
+          }
+
+          &:nth-child(7) {
+            @include ingredient-position(10.5rem, 3.5rem);
+          }
+
+          &:nth-child(8) {
+            @include ingredient-position(4.5rem, 12.5rem);
+          }
+        }
+      }
+
+      & .tomatoes {
+        @include ingredient;
+
+        & .tomato {
+          @include ingredient-image('/assets/images/ingredients/tomato.png', 3rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(3.5rem, 8.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(5.5rem, 2.3rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(1.5rem, 3.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(12rem, 9.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(7.5rem, 5.5rem);
+          }
+
+          &:nth-child(6) {
+            @include ingredient-position(10.5rem, 3.5rem);
+          }
+        }
+      }
+
+      & .basils {
+        @include ingredient;
+
+        & .basil {
+          @include ingredient-image('/assets/images/ingredients/basil.png', 3rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(5.5rem, 8.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(5.5rem, 3.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(1.5rem, 6.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(9rem, 1.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(9.5rem, 6.3rem);
+          }
+        }
+      }
+
+      & .peppers-orange {
+        @include ingredient;
+
+        & .pepper-orange {
+          @include ingredient-image('/assets/images/ingredients/pepper-orange.png', 3rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(8.3rem, 7.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(3.5rem, 1.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(1.5rem, 10.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(12rem, 3.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(10.4rem, 11.4rem);
+          }
+        }
+      }
+
+      & .peppers-yellow {
+        @include ingredient;
+
+        & .pepper-yellow {
+          @include ingredient-image('/assets/images/ingredients/pepper-yellow.png', 3rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(5.5rem, 10.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(5.5rem, 6.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(0.5rem, 4.8rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(7rem, 0.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(10.5rem, 8.3rem);
+          }
+        }
+      }
+
+      & .peppers-green {
+        @include ingredient;
+
+        & .pepper-green {
+          @include ingredient-image('/assets/images/ingredients/pepper-green.png', 3rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(5.5rem, 8.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(5.5rem, 3.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(1.5rem, 6.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(9rem, 1.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(9.5rem, 6.3rem);
+          }
+        }
+      }
+
+      & .pepperonis {
+        @include ingredient;
+
+        & .pepperoni {
+          @include ingredient-image('/assets/images/ingredients/pepperoni.png', 3.4rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(1.5rem, 8.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(6rem, 0.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(1.5rem, 3.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(10.5rem, 3.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(10.5rem, 8.5rem);
+          }
+
+          &:nth-child(6) {
+            @include ingredient-position(6.5rem, 11.5rem);
+          }
+
+          &:nth-child(7) {
+            @include ingredient-position(6rem, 6.5rem);
+          }
+        }
+      }
+
+      & .mushrooms {
+        @include ingredient;
+
+        & .mushroom {
+          @include ingredient-image('/assets/images/ingredients/mushroom.png', 3.4rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(1.5rem, 8.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(6rem, 0.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(1.5rem, 3.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(10.5rem, 3.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(10.5rem, 8.5rem);
+          }
+
+          &:nth-child(6) {
+            @include ingredient-position(6.5rem, 11.5rem);
+          }
+
+          &:nth-child(7) {
+            @include ingredient-position(6rem, 6.5rem);
+          }
+        }
+      }
+
+      & .salamis {
+        @include ingredient;
+
+        & .salami {
+          @include ingredient-image('/assets/images/ingredients/salami.png', 3.4rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(1.5rem, 9.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(8rem, 4.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(2.5rem, 1.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(11.5rem, 3.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(8.5rem, 0.5rem);
+          }
+
+          &:nth-child(6) {
+            @include ingredient-position(8.5rem, 10.5rem);
+          }
+
+          &:nth-child(7) {
+            @include ingredient-position(4rem, 6.5rem);
+          }
+        }
+      }
+
+      & .chilis {
+        @include ingredient;
+
+        & .chili {
+          @include ingredient-image('/assets/images/ingredients/chili.png', 4.5rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(8.5rem, 8.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(5.5rem, 3.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(1.5rem, 3.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(10.5rem, 2.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(1.5rem, 8.5rem);
+          }
+        }
+      }
+
+      & .mints {
+        @include ingredient;
+
+        & .mint {
+          @include ingredient-image('/assets/images/ingredients/mint.png', 4.5rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(8.5rem, 8.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(5.5rem, 3.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(1.5rem, 3.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(10.5rem, 2.5rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(1.5rem, 8.5rem);
+          }
+        }
+      }
+
+      & .hams {
+        @include ingredient;
+
+        & .ham {
+          @include ingredient-image('/assets/images/ingredients/ham.png', 3.5rem);
+
+          &:nth-child(1) {
+            @include ingredient-position(4.5rem, 10.5rem);
+          }
+
+          &:nth-child(2) {
+            @include ingredient-position(4.5rem, 1.5rem);
+          }
+
+          &:nth-child(3) {
+            @include ingredient-position(0.5rem, 5.5rem);
+          }
+
+          &:nth-child(4) {
+            @include ingredient-position(8.5rem, 2rem);
+          }
+
+          &:nth-child(5) {
+            @include ingredient-position(12.5rem, 6rem);
+          }
+
+          &:nth-child(6) {
+            @include ingredient-position(8.5rem, 8.5rem);
+          }
+
+          &:nth-child(7) {
+            @include ingredient-position(5rem, 5.5rem);
+          }
+        }
+      }
+    }
+  }
+}

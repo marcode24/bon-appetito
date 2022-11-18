@@ -1,0 +1,41 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+@import 'elements/_button.scss';
+
+.quantity {
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-basis: auto;
+
+  & .btn-inside {
+    @include btn;
+    @include btn-transparent;
+    padding: 0;
+    width: 40px;
+
+    &:hover {
+      @include btn-transparent-hover;
+    }
+
+    &:disabled {
+      background: none;
+      cursor: not-allowed;
+    }
+
+    & .fa-trash-can {
+      color: $fc-1;
+    }
+
+  }
+
+  & span {
+    cursor: default;
+    min-width: 40px;
+    text-align: center;
+    @include fs-4;
+    @include fw-700;
+  }
+
+}

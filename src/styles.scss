@@ -1,5 +1,6 @@
 @import 'settings/_typography.scss';
 @import 'settings/_colors.scss';
+@import 'elements/_button.scss';
 
 * {
   margin: 0;
@@ -27,33 +28,123 @@
 .container {
   padding: 1.5rem 1.8rem;
   background: var(--bg-mobile);
+
+  &.overflow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+  }
 }
 
-.options::-webkit-scrollbar,
+.options-header {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & .fa {
+    @include fs-5;
+    transition: 0.4s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+
+  & .fa.fa-arrow-left:hover {
+    cursor: pointer;
+    color: $fc-3;
+    background-color: $bg-hover-1;
+  }
+
+  & .title {
+    @include fs-5;
+    @include fw-600;
+  }
+}
+
+.items-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 30;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 1;
+  height: 50%;
+  transition: 0.2s ease-in-out;
+  background: #fafafa;
+
+  & .items {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  & .options {
+    width: 100%;
+    height: 60px;
+    max-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 1.8rem;
+    min-height: 60px;
+
+    & .btn-add {
+      @include btn;
+      @include btn-secondary;
+
+      &:disabled {
+        @include btn-secondary-disabled;
+      }
+    }
+  }
+}
+
+.btn-transparent {
+  @include btn;
+  @include btn-transparent;
+
+  &:hover {
+    background-color: #e7e7e7;
+  }
+
+  &.text-secondary {
+    color: $fc-4;
+  }
+
+}
+
+.items::-webkit-scrollbar,
 .mobile::-webkit-scrollbar {
   width: 4px;
   border-radius: 2.2rem;
   background-color: $bg-mobile-light;
 }
-.options::-webkit-scrollbar-track,
+
+.items::-webkit-scrollbar-track,
 .mobile::-webkit-scrollbar-track {
   background-color: $bg-mobile-light;
 }
-.options::-webkit-scrollbar-thumb,
+
+.items::-webkit-scrollbar-thumb,
 .mobile::-webkit-scrollbar-thumb {
   background-color: $bg-scroll;
   border-radius: 1rem;
 }
-.options::-webkit-scrollbar-thumb:hover,
+
+.items::-webkit-scrollbar-thumb:hover,
 .mobile::-webkit-scrollbar-thumb:hover {
   background: $bg-scroll;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
-.options::-webkit-scrollbar-thumb:active,
+
+.items::-webkit-scrollbar-thumb:active,
 .mobile::-webkit-scrollbar-thumb:active {
   background: $bg-scroll;
 }
-
 
 @media (max-width: 378px) {
   .container {
