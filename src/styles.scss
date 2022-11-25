@@ -1,6 +1,7 @@
 @import 'settings/_typography.scss';
 @import 'settings/_colors.scss';
 @import 'elements/_button.scss';
+@import 'elements/_selection.scss';
 
 * {
   margin: 0;
@@ -194,26 +195,32 @@ label {
       color: #fe4365;
       transition: 0.4s;
     }
-
+  }
+  & input[type="checkbox"] {
     &+.label-text:before {
-      content: "\f096";
-      color: #dddfe6;
-      font-family: "FontAwesome";
-      line-height: 1;
-      width: 1em;
-      display: inline-block;
-      margin-right: 5px;
+      @include label-text-before("\f096");
     }
 
     &:checked+.label-text:before {
-      content: "\f14a";
-      color: $fc-1;
-      animation: tick 0.15s ease-in;
+      @include label-text-checked-before("\f14a");
     }
 
     &:disabled+.label-text:before {
-      content: "\f0c8";
-      color: #dddfe6;
+      @include label-text-disabled-before("\f0c8");
+    }
+  }
+
+  & input[type="radio"] {
+    &+.label-text:before {
+      @include label-text-before("\f10c");
+    }
+
+    &:checked+.label-text:before {
+      @include label-text-checked-before("\f192");
+    }
+
+    &:disabled+.label-text:before {
+      @include label-text-disabled-before("\f111");
     }
   }
 

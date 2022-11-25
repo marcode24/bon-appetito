@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ICart } from '@interfaces/cart.interface';
 
-import { IPaymentMehod } from '@interfaces/payment.interface';
-
+import { AlertService } from '@services/alert.service';
 import { CartService } from '@services/cart.service';
 import { UserService } from '@services/user.service';
+
+import { ICart } from '@interfaces/cart.interface';
+import { IPaymentMehod } from '@interfaces/payment.interface';
 
 @Component({
   selector: 'app-payment',
@@ -22,7 +23,8 @@ export class PaymentComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private userService: UserService
+    private userService: UserService,
+    private alertService: AlertService,
   ) { }
 
   ngOnInit(): void {
@@ -45,9 +47,11 @@ export class PaymentComponent implements OnInit {
       const selectedMethod = this.paymentMethods.find(el => el.selected) as IPaymentMehod;
       if(selectedMethod.id === 1) {
         this.userService.discountCredits(this.cart.total);
+        this.paymentMethods[0].credits = this.userService.getCredits;
       }
       this.cartService.clearCart();
       this.resetMethods();
+      this.alertService.emitAlert({ message: 'Pedido Realizado Correctamente', type: 'success' });
     }
   }
 

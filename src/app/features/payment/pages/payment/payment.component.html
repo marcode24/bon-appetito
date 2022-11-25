@@ -19,9 +19,9 @@
                 </div>
                 <p class="method">{{ payment.name }}
                   <span *ngIf="!payment.enabled" class="comming">comming soon</span>
-                  <span class="credits" [class.not-enough]="!enoughtCredits()" *ngIf="payment.id === 1">{{
-                    payment.credits | currency: '$ '
-                    }}</span>
+                  <span class="credits" [class.not-enough]="!enoughtCredits()" *ngIf="payment.id === 1">
+                    {{ payment.credits | currency: '$ ' }}
+                  </span>
                 </p>
               </div>
             </div>

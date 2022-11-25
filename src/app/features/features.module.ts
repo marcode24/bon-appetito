@@ -8,6 +8,7 @@ import { CartModule } from './cart/cart.module';
 import { ComponentsModule } from '@components/components.module';
 import { HomeModule } from './home/home.module';
 import { PaymentModule } from './payment/payment.module';
+import { SharedModule } from 'app/shared/shared.module';
 
 import { FeaturesComponent } from './features.component';
 
@@ -16,14 +17,15 @@ import { FeaturesComponent } from './features.component';
     FeaturesComponent,
   ],
   imports: [
-    CommonModule,
     BrowserAnimationsModule,
-    RouterModule,
-    ComponentsModule,
-    HomeModule,
     BuildPizzaModule,
     CartModule,
-    PaymentModule
+    CommonModule,
+    ComponentsModule,
+    HomeModule,
+    PaymentModule,
+    RouterModule,
+    SharedModule
   ]
 })
 export class FeaturesModule { }
