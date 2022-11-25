@@ -31,7 +31,7 @@
         <span class="title">{{ cart.total | currency: '$ ' }}</span>
         <span class="subtitle">Total a pagar</span>
       </div>
-      <button class="btn-add" [disabled]="!cart.items || cart.items.length === 0">
+      <button class="btn-add" routerLink="/payment" [disabled]="!cart.items || cart.items.length === 0">
         Realizar Pedido
       </button>
     </div>

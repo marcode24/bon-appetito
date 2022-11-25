@@ -93,25 +93,3 @@ ul {
     }
   }
 }
-
-.options {
-  height: 80px;
-  max-height: 80px;
-
-  .total-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column-reverse;
-
-    & .title {
-      @include fs-3;
-      @include fw-600;
-    }
-
-    & .subtitle {
-      @include fs-7;
-      @include fw-500;
-    }
-  }
-}

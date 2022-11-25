@@ -21,6 +21,12 @@ const routes: Routes = [
     data: { animation: 'bottom' },
     loadChildren: () => import('./cart/cart.routing').then(m => m.CartRoutingModule),
   },
+  {
+    path: 'payment',
+    component: FeaturesComponent,
+    data: { animation: 'bottom' },
+    loadChildren: () => import('./payment/payment.routing').then(m => m.PaymentRoutingModule),
+  },
 ];
 
 @NgModule({

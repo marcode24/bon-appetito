@@ -146,6 +146,98 @@
   background: $bg-scroll;
 }
 
+.options {
+  height: 80px;
+  max-height: 80px;
+
+  .total-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+
+    & .title {
+      @include fs-3;
+      @include fw-600;
+    }
+
+    & .subtitle {
+      @include fs-7;
+      @include fw-500;
+    }
+  }
+}
+
+label {
+  cursor: pointer;
+  color: #383A3F;
+  display: block;
+  font-size: 1.2em;
+  width: 100%;
+
+  &.disabled {
+    cursor: default;
+  }
+
+  & input[type="checkbox"], input[type="radio"] {
+    display: none;
+
+    &:disabled {
+      cursor: default;
+    }
+
+    &+.label-text:hover:before {
+      color: #fe4365;
+      transition: 0.4s;
+    }
+
+    &+.label-text:before {
+      content: "\f096";
+      color: #dddfe6;
+      font-family: "FontAwesome";
+      line-height: 1;
+      width: 1em;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    &:checked+.label-text:before {
+      content: "\f14a";
+      color: $fc-1;
+      animation: tick 0.15s ease-in;
+    }
+
+    &:disabled+.label-text:before {
+      content: "\f0c8";
+      color: #dddfe6;
+    }
+  }
+
+  & .label-text {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 1rem;
+  }
+
+  & .ingredient {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin: 0 auto 0 0;
+
+    & .name {
+      @include fs-7;
+      @include fw-500;
+    }
+
+    & .price {
+      @include fs-6;
+      @include fw-600;
+    }
+  }
+}
+
 @media (max-width: 378px) {
   .container {
     padding: 1.3rem 1.5rem;

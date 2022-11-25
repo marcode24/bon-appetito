@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-
-import { CartComponent } from './pages/cart/cart.component';
 
 import { SharedModule } from 'app/shared/shared.module';
 
+import { PaymentComponent } from './pages/payment/payment.component';
+
 @NgModule({
   declarations: [
-    CartComponent
+    PaymentComponent
   ],
   imports: [
     CommonModule,
-    SharedModule,
-    RouterModule
+    SharedModule
   ]
 })
-export class CartModule { }
+export class PaymentModule { }
