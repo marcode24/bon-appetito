@@ -156,6 +156,10 @@
     align-items: flex-start;
     flex-direction: column-reverse;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     & .title {
       @include fs-3;
       @include fw-600;

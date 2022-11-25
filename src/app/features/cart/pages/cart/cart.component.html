@@ -27,7 +27,7 @@
       </ul>
     </div>
     <div class="options">
-      <div class="total-container">
+      <div class="total-container" (click)="addCreditsFree()">
         <span class="title">{{ cart.total | currency: '$ ' }}</span>
         <span class="subtitle">Total a pagar</span>
       </div>

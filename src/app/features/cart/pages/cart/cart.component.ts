@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ICart } from '@interfaces/cart.interface';
+
 import { CartService } from '@services/cart.service';
+import { UserService } from '@services/user.service';
+
+import { ICart } from '@interfaces/cart.interface';
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +12,10 @@ import { CartService } from '@services/cart.service';
 })
 export class CartComponent implements OnInit {
   cart: ICart;
-  constructor(private cartService: CartService) { }
+  constructor(
+    private cartService: CartService,
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
     this.loadCart();
@@ -59,6 +65,10 @@ export class CartComponent implements OnInit {
   deleteItem(index: number) {
     this.cartService.deletItem(index);
     this.loadCart();
+  }
+
+  addCreditsFree(): void {
+    this.userService.addCredits();
   }
 
 }

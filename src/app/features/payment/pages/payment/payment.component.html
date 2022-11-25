@@ -4,19 +4,21 @@
     <span class="title">Tu pedido</span>
   </div>
 
-  <div class="items-wrapper">
+  <div class="items-wrapper" *ngIf="cart">
     <div class="items">
       <span class="title"> Opciones de Pago </span>
       <ul class="methods">
         <li class="item" *ngFor="let payment of paymentMethods">
-          <label [class.disabled]="!payment.enabled">
-            <input type="radio" name="radio" [disabled]="!payment.enabled" />
+          <label [class.disabled]="!payment.enabled || !enoughtCredits()">
+            <input type="radio" name="radio" [disabled]="!payment.enabled || !enoughtCredits()"
+              (change)="selectMethod(payment.id)" [checked]="payment.selected" />
             <div class="label-text">
               <div class="wrapper">
                 <i class="fa" [ngClass]="payment.icon"></i>
                 <p class="method">{{ payment.name }}
                   <span *ngIf="!payment.enabled" class="comming">comming soon</span>
-                  <span class="credits not-enough" *ngIf="payment.id === 1">{{ payment.credits | currency: '$ '
+                  <span class="credits" [class.not-enough]="!enoughtCredits()" *ngIf="payment.id === 1">{{
+                    payment.credits | currency: '$ '
                     }}</span>
                 </p>
               </div>
@@ -28,7 +30,7 @@
       <ul class="resume">
         <li class="item">
           <span class="title">Costo de productos</span>
-          <span class="total">$23243.231</span>
+          <span class="total">{{ cart.total | currency: '$ ' }}</span>
         </li>
         <li class="item">
           <span class="title">Costo de envio</span>
@@ -42,13 +44,12 @@
     </div>
     <div class="options">
       <div class="total-container">
-        <span class="title">{{ 123.23 | currency: '$ ' }}</span>
+        <span class="title">{{ cart.total | currency: '$ ' }}</span>
         <span class="subtitle">Total a pagar</span>
       </div>
-      <button class="btn-add">
+      <button class="btn-add" [disabled]="!hasSelectedMethod() || cart.items.length === 0" (click)="pay()">
         Realizar Pedido
       </button>
     </div>
   </div>
-
 </div>
