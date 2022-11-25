@@ -85,8 +85,14 @@
       align-items: center;
       gap: 10px;
 
-      & .fa {
-        @include fs-6;
+      & .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        & .fa {
+          @include fs-6;
+        }
       }
 
       & .method {
