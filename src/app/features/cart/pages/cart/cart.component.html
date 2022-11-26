@@ -6,7 +6,7 @@
       class="btn-transparent text-secondary">Vaciar</button>
   </div>
 
-  <div class="items-wrapper">
+  <div *ngIf="cart && cart.items.length > 0" class="items-wrapper">
     <div class="items">
       <ul *ngIf="cart.items && cart.items.length >= 1">
         <li class="item" *ngFor="let item of cart.items; let i = index">
@@ -37,4 +37,10 @@
     </div>
   </div>
 
+  <div *ngIf="!cart || cart.items.length === 0" class="empty">
+    <i class="fa fa-basket-shopping"></i>
+    <span class="empty-text">
+      Aún no tienes pizzas en tu canasta
+    </span>
+  </div>
 </div>

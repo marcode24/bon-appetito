@@ -45,3 +45,9 @@
   cursor: not-allowed;
   background-color: rgba($fc-4, 0.4);
 }
+
+@mixin btn-transparent-disabled {
+  cursor: not-allowed;
+  background: transparent;
+  color: rgba($fc-1-light, 0.5);
+}

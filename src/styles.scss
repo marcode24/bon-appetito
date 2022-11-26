@@ -130,8 +130,12 @@
     background-color: #e7e7e7;
   }
 
-  &.text-secondary {
+  &:not(:disabled).text-secondary {
     color: $fc-4;
+  }
+
+  &:disabled {
+    @include btn-transparent-disabled;
   }
 
 }

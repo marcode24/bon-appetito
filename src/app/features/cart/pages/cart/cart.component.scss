@@ -96,3 +96,24 @@ ul {
 button.btn-add {
   width: 150px;
 }
+
+.empty {
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  & .fa {
+    @include fs-4;
+    color: rgb($fc-1-light, 0.5);
+  }
+
+  & .empty-text {
+    @include fs-5;
+    @include fw-500;
+    text-align: center;
+    max-width: 60%;
+  }
+}
