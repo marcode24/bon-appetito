@@ -17,17 +17,20 @@
   position: absolute;
   height: $size;
   width: $size;
+  filter: drop-shadow(-4px -2px 4px rgba(0, 0, 0, 0.2));
+
 }
 
-@mixin ingredient-position($left, $top) {
-  left: $left;
-  top: $top;
+@mixin ingredient-position($child, $left, $top) {
+  &:nth-child(#{$child}) {
+    left: $left;
+    top: $top;
+  }
 }
 
 .builder {
   width: 100%;
   height: 100%;
-
 
   & .pizza-wrapper {
     flex-grow: 1;
@@ -37,31 +40,13 @@
     align-items: center;
     height: 100%;
 
-    & .edge {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      max-height: 295px;
-      max-width: 295px;
-      min-height: 260px;
-      min-width: 260px;
-      border-radius: 50%;
-      background-color: #d38d2e;
-      box-shadow: -4px -4px 11px 1px rgba(0, 0, 0, 0.39);
-      -webkit-box-shadow: -4px -4px 11px 1px rgba(0, 0, 0, 0.39);
-      -moz-box-shadow: -4px -4px 11px 1px rgba(0, 0, 0, 0.39);
-    }
-
     & .pizza {
+
       position: absolute;
       height: 100%;
       width: 100%;
-      max-height: 260px;
-      max-width: 260px;
-      min-height: 240px;
-      min-width: 240px;
-      border-radius: 50%;
-      background-color: #f6c220;
+      background: url('/assets/images/pizza.png') no-repeat center center ;
+      filter: drop-shadow(-4px -2px 4px rgba(0, 0, 0, 0.3));
 
       & .show {
         opacity: 1 !important;
@@ -73,38 +58,14 @@
 
         & .olive {
           @include ingredient-image('/assets/images/ingredients/olives.png', 1.5rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(4.5rem, 8.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(5.5rem, 2.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(1.5rem, 3.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(12rem, 9.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(10.5rem, 12.5rem);
-          }
-
-          &:nth-child(6) {
-            @include ingredient-position(7.5rem, 5.5rem);
-          }
-
-          &:nth-child(7) {
-            @include ingredient-position(10.5rem, 3.5rem);
-          }
-
-          &:nth-child(8) {
-            @include ingredient-position(4.5rem, 12.5rem);
-          }
+          @include ingredient-position(1, 10.5rem, 8.5rem);
+          @include ingredient-position(2, 13.5rem, 3.5rem);
+          @include ingredient-position(3, 13.8rem, 6.2rem);
+          @include ingredient-position(4, 14rem, 10.5rem);
+          @include ingredient-position(5, 10.5rem, 12.5rem);
+          @include ingredient-position(6, 6.5rem, 5.5rem);
+          @include ingredient-position(7, 10.5rem, 3.5rem);
+          @include ingredient-position(8, 6.5rem, 10.5rem);
         }
       }
 
@@ -113,30 +74,12 @@
 
         & .tomato {
           @include ingredient-image('/assets/images/ingredients/tomato.png', 3rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(3.5rem, 8.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(5.5rem, 2.3rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(1.5rem, 3.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(12rem, 9.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(7.5rem, 5.5rem);
-          }
-
-          &:nth-child(6) {
-            @include ingredient-position(10.5rem, 3.5rem);
-          }
+          @include ingredient-position(1, 6rem, 10.5rem);
+          @include ingredient-position(2, 6.5rem, 4rem);
+          @include ingredient-position(3, 13.5rem, 6.5rem);
+          @include ingredient-position(4, 12rem, 10.5rem);
+          @include ingredient-position(5, 9.5rem, 7rem);
+          @include ingredient-position(6, 11.5rem, 2.5rem);
         }
       }
 
@@ -145,26 +88,11 @@
 
         & .basil {
           @include ingredient-image('/assets/images/ingredients/basil.png', 3rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(5.5rem, 8.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(5.5rem, 3.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(1.5rem, 6.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(9rem, 1.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(9.5rem, 6.3rem);
-          }
+          @include ingredient-position(1, 5.5rem, 8.5rem);
+          @include ingredient-position(2, 9.5rem, 6.5rem);
+          @include ingredient-position(3, 14.5rem, 6.5rem);
+          @include ingredient-position(4, 9rem, 2.5rem);
+          @include ingredient-position(5, 10.5rem, 11.3rem);
         }
       }
 
@@ -173,26 +101,11 @@
 
         & .pepper-orange {
           @include ingredient-image('/assets/images/ingredients/pepper-orange.png', 3rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(8.3rem, 7.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(3.5rem, 1.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(1.5rem, 10.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(12rem, 3.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(10.4rem, 11.4rem);
-          }
+          @include ingredient-position(1, 8.3rem, 6.8rem);
+          @include ingredient-position(2, 7.5rem, 2.5rem);
+          @include ingredient-position(3, 6.5rem, 10.5rem);
+          @include ingredient-position(4, 12rem, 3.5rem);
+          @include ingredient-position(5, 13.4rem, 9.4rem);
         }
       }
 
@@ -201,26 +114,11 @@
 
         & .pepper-yellow {
           @include ingredient-image('/assets/images/ingredients/pepper-yellow.png', 3rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(5.5rem, 10.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(5.5rem, 6.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(0.5rem, 4.8rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(7rem, 0.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(10.5rem, 8.3rem);
-          }
+          @include ingredient-position(1, 6.5rem, 10.5rem);
+          @include ingredient-position(2, 5.5rem, 5.5rem);
+          @include ingredient-position(3, 9.5rem, 2.8rem);
+          @include ingredient-position(4, 13.2rem, 11.5rem);
+          @include ingredient-position(5, 11.5rem, 7.3rem);
         }
       }
 
@@ -229,26 +127,11 @@
 
         & .pepper-green {
           @include ingredient-image('/assets/images/ingredients/pepper-green.png', 3rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(5.5rem, 8.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(5.5rem, 3.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(1.5rem, 6.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(9rem, 1.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(9.5rem, 6.3rem);
-          }
+          @include ingredient-position(1, 5.5rem, 8.5rem);
+          @include ingredient-position(2, 5.5rem, 3.5rem);
+          @include ingredient-position(3, 10.5rem, 11.5rem);
+          @include ingredient-position(4, 13rem, 3.5rem);
+          @include ingredient-position(5, 10.5rem, 7.3rem);
         }
       }
 
@@ -257,34 +140,13 @@
 
         & .pepperoni {
           @include ingredient-image('/assets/images/ingredients/pepperoni.png', 3.4rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(1.5rem, 8.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(6rem, 0.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(1.5rem, 3.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(10.5rem, 3.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(10.5rem, 8.5rem);
-          }
-
-          &:nth-child(6) {
-            @include ingredient-position(6.5rem, 11.5rem);
-          }
-
-          &:nth-child(7) {
-            @include ingredient-position(6rem, 6.5rem);
-          }
+          @include ingredient-position(1, 5rem, 8.5rem);
+          @include ingredient-position(2, 10rem, 2rem);
+          @include ingredient-position(3, 5.5rem, 3.5rem);
+          @include ingredient-position(4, 14.5rem, 5rem);
+          @include ingredient-position(5, 14rem, 9.5rem);
+          @include ingredient-position(6, 9.5rem, 11.5rem);
+          @include ingredient-position(7, 10rem, 6.5rem);
         }
       }
 
@@ -293,34 +155,13 @@
 
         & .mushroom {
           @include ingredient-image('/assets/images/ingredients/mushroom.png', 3.4rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(1.5rem, 8.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(6rem, 0.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(1.5rem, 3.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(10.5rem, 3.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(10.5rem, 8.5rem);
-          }
-
-          &:nth-child(6) {
-            @include ingredient-position(6.5rem, 11.5rem);
-          }
-
-          &:nth-child(7) {
-            @include ingredient-position(6rem, 6.5rem);
-          }
+          @include ingredient-position(1, 5.5rem, 9.5rem);
+          @include ingredient-position(2, 10rem, 2.5rem);
+          @include ingredient-position(3, 5.5rem, 4.5rem);
+          @include ingredient-position(4, 13.5rem, 6.5rem);
+          @include ingredient-position(5, 12.5rem, 9.5rem);
+          @include ingredient-position(6, 8.5rem, 12.5rem);
+          @include ingredient-position(7, 9rem, 7.5rem);
         }
       }
 
@@ -329,34 +170,13 @@
 
         & .salami {
           @include ingredient-image('/assets/images/ingredients/salami.png', 3.4rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(1.5rem, 9.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(8rem, 4.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(2.5rem, 1.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(11.5rem, 3.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(8.5rem, 0.5rem);
-          }
-
-          &:nth-child(6) {
-            @include ingredient-position(8.5rem, 10.5rem);
-          }
-
-          &:nth-child(7) {
-            @include ingredient-position(4rem, 6.5rem);
-          }
+          @include ingredient-position(1, 13.5rem, 10rem);
+          @include ingredient-position(2, 8rem, 7.5rem);
+          @include ingredient-position(3, 6.5rem, 2.5rem);
+          @include ingredient-position(4, 12.5rem, 5.5rem);
+          @include ingredient-position(5, 10.5rem, 1.5rem);
+          @include ingredient-position(6, 8.5rem, 11.5rem);
+          @include ingredient-position(7, 4rem, 6.5rem);
         }
       }
 
@@ -365,26 +185,11 @@
 
         & .chili {
           @include ingredient-image('/assets/images/ingredients/chili.png', 4.5rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(8.5rem, 8.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(5.5rem, 3.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(1.5rem, 3.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(10.5rem, 2.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(1.5rem, 8.5rem);
-          }
+          @include ingredient-position(1, 11.5rem, 10.5rem);
+          @include ingredient-position(2, 5.5rem, 3.5rem);
+          @include ingredient-position(3, 11.5rem, 6.5rem);
+          @include ingredient-position(4, 10.5rem, 2.5rem);
+          @include ingredient-position(5, 6.5rem, 8.5rem);
         }
       }
 
@@ -393,26 +198,11 @@
 
         & .mint {
           @include ingredient-image('/assets/images/ingredients/mint.png', 4.5rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(8.5rem, 8.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(5.5rem, 3.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(1.5rem, 3.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(10.5rem, 2.5rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(1.5rem, 8.5rem);
-          }
+          @include ingredient-position(1, 13.5rem, 6.5rem);
+          @include ingredient-position(2, 5.5rem, 3.5rem);
+          @include ingredient-position(3, 10rem, 8.5rem);
+          @include ingredient-position(4, 10.5rem, 1.5rem);
+          @include ingredient-position(5, 5.5rem, 9.5rem);
         }
       }
 
@@ -421,34 +211,13 @@
 
         & .ham {
           @include ingredient-image('/assets/images/ingredients/ham.png', 3.5rem);
-
-          &:nth-child(1) {
-            @include ingredient-position(4.5rem, 10.5rem);
-          }
-
-          &:nth-child(2) {
-            @include ingredient-position(4.5rem, 1.5rem);
-          }
-
-          &:nth-child(3) {
-            @include ingredient-position(0.5rem, 5.5rem);
-          }
-
-          &:nth-child(4) {
-            @include ingredient-position(8.5rem, 2rem);
-          }
-
-          &:nth-child(5) {
-            @include ingredient-position(12.5rem, 6rem);
-          }
-
-          &:nth-child(6) {
-            @include ingredient-position(8.5rem, 8.5rem);
-          }
-
-          &:nth-child(7) {
-            @include ingredient-position(5rem, 5.5rem);
-          }
+          @include ingredient-position(1, 6.5rem, 10.5rem);
+          @include ingredient-position(2, 7rem, 2rem);
+          @include ingredient-position(3, 4.5rem, 5.5rem);
+          @include ingredient-position(4, 11.5rem, 2rem);
+          @include ingredient-position(5, 14.5rem, 6rem);
+          @include ingredient-position(6, 11.5rem, 10.5rem);
+          @include ingredient-position(7, 9rem, 6.5rem);
         }
       }
     }
