@@ -11,7 +11,6 @@ import { IPizza } from '@interfaces/pizza.interface';
 })
 export class BuildPizzaComponent implements OnInit {
 
-
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
