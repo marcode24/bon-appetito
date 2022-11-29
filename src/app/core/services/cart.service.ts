@@ -12,8 +12,21 @@ export class CartService {
 
   addItem(pizza: IPizza) {
     this.loadCartFromStorage();
-    this.cart.items.push(pizza);
+    if (pizza.name && this.existsPizzaInCart(pizza.name)) {
+      const index = this.findIndexRepeatedPizza(pizza.name);
+      this.cart.items[index].quantity++;
+    } else{
+      this.cart.items.push(pizza);
+    }
     this.saveData();
+  }
+
+  existsPizzaInCart(name: string): boolean {
+    return this.cart.items.some(pizza => pizza.name === name);
+  }
+
+  findIndexRepeatedPizza(name: string): number {
+    return this.cart.items.findIndex(pizza => pizza.name === name);
   }
 
   deletItem(index: number) {

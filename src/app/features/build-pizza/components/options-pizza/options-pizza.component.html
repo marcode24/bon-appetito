@@ -22,7 +22,7 @@
           <input [disabled]="hasSelectedEnoughItems(ingredient.name)" type="checkbox" name="check"
             (change)="changeSelection(ingredient)" [checked]="ingredient.selected" />
           <div class="label-text">
-            <div class="ingredient">
+            <div class="ingredient has-image">
               <picture>
                 <img loading="lazy" [src]="'assets/images/ingredients/' + ingredient.pathImage"
                   alt="{{ ingredient.name }}" />

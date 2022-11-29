@@ -1,5 +1,7 @@
 import { IPizza } from "@interfaces/pizza.interface";
+
 import { ingredients } from "./ingredients.data";
+import { sizes } from "./sizes.data";
 
 export const pizzas: IPizza[] = [
   {
@@ -10,7 +12,7 @@ export const pizzas: IPizza[] = [
     ingredients: [
       ingredients[0],
     ],
-    size: { sizeName: 'Chica', price: 127, slices: 8, size: 25, measurement: 'cm' },
+    size: sizes[0],
   },
   {
     name: 'Delicarne',
@@ -23,7 +25,7 @@ export const pizzas: IPizza[] = [
       ingredients[2],
       ingredients[3],
     ],
-    size: { sizeName: 'Chica', price: 127, slices: 8, size: 25, measurement: 'cm' },
+    size: sizes[0],
   },
   {
     name: 'Hawaiiana',
@@ -34,7 +36,7 @@ export const pizzas: IPizza[] = [
       ingredients[3],
       ingredients[5],
     ],
-    size: { sizeName: 'Chica', price: 127, slices: 8, size: 25, measurement: 'cm' },
+    size: sizes[0],
   },
   {
     name: 'Caprichosa',
@@ -47,6 +49,6 @@ export const pizzas: IPizza[] = [
       ingredients[7],
       ingredients[9],
     ],
-    size: { sizeName: 'Chica', price: 127, slices: 8, size: 25, measurement: 'cm' },
+    size: sizes[0],
   },
 ];

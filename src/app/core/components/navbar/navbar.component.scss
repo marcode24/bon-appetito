@@ -24,17 +24,34 @@ nav {
       border-radius: 50%;
       transition: 0.4s ease;
 
+      &:has(.dot) {
+        position: relative;
+      }
+
+      & .dot {
+        box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+        -webkit-box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+        -moz-box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+        position: absolute;
+        top: 6px;
+        left: 17px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $fc-4;
+      }
+
       & a {
         @include fs-4;
         color: inherit;
         border-radius: inherit;
+        position: relative;
       }
 
-      &:hover{
-        text-shadow: 0px 0px 20px #ed4b4b;
+      &:not(.active):hover{
+        text-shadow: 0px 0px 20px $fc-1;
       }
     }
-
 
     & .active {
       text-shadow: 0px 0px 20px #ed4b4b;

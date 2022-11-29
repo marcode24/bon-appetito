@@ -243,13 +243,13 @@ label {
   & .ingredient {
     @include ingredient-description;
 
-    &:has(picture img) {
+    &.has-image {
       flex-direction: row;
       gap: 10px;
-    }
 
-    &:has(picture img) .description {
-      @include ingredient-description;
+      & .description {
+        @include ingredient-description;
+      }
     }
 
     picture {
@@ -262,8 +262,6 @@ label {
         width: inherit;
         height: inherit;
       }
-
-
     }
 
     & .name {

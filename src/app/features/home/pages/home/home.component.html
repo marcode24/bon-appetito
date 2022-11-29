@@ -14,9 +14,9 @@
         <span class="ingredients">{{ buildDescription(i) }}</span>
         <div class="options">
           <span class="price">{{ pizza.price | currency : '$' }}</span>
-          <span class="cart">
+          <div class="cart" (click)="addPizzaToCart(i)">
             <i class="fa fa-plus"></i>
-          </span>
+          </div>
         </div>
       </div>
     </div>

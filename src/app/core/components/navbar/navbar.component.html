@@ -1,7 +1,10 @@
 <nav>
   <ul class="nav">
     <li class="item">
-      <a routerLink="/cart"><i class="fa fa-cart-plus"></i></a>
+      <a routerLink="/cart">
+        <div *ngIf="hasItemsCart" class="dot"></div>
+        <i class="fa fa-basket-shopping"></i>
+      </a>
     </li>
     <li class="item active">
       <a routerLink="/"><i class="fa fa-home"></i></a>
