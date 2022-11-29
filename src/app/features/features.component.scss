@@ -27,6 +27,16 @@
 
 }
 
+app-alert {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 425px) {
   .wrapper {
     padding: 0;

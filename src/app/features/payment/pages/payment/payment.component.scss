@@ -1,0 +1,105 @@
+@import 'objects/_list.scss';
+@import 'settings/_typography.scss';
+@import 'settings/_colors.scss';
+
+.options-header {
+  justify-content: initial;
+
+  & .title {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.items-wrapper {
+  height: 90%;
+
+  & .items {
+    padding: 0 2rem;
+
+    & ul.methods {
+    @include ul;
+    padding: 0;
+    margin: 1rem 0;
+
+      & li {
+        @include li;
+        justify-content: space-between;
+        padding: 1.2rem 0;
+
+        &:nth-child(1n-2) {
+          border-bottom: 1px solid #e2e2e2;
+        }
+
+        & .credits {
+          @include fs-5;
+          @include fw-600;
+          color: $fc-4;
+
+          &.not-enough {
+            color: $fc-1;
+          }
+        }
+
+        & .comming {
+          @include fs-7;
+          @include fw-600;
+          color: $fc-4;
+        }
+
+      }
+    }
+
+    & ul.resume {
+      @include ul;
+      padding: 0;
+      margin: 1rem 0;
+      gap: 8px;
+
+      & li.item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .title {
+          @include fw-400;
+          font-size: 14px;
+        }
+
+        & .total {
+          @include fw-500;
+          font-size: 14px;
+        }
+
+      }
+    }
+
+    & .title {
+      @include fs-6;
+      @include fw-600;
+    }
+
+    & .wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      & .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        & .fa {
+          @include fs-6;
+        }
+      }
+
+      & .method {
+        @include fs-6;
+        @include fw-500;
+      }
+    }
+
+  }
+}

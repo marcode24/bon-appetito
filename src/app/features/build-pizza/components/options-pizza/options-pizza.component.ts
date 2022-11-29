@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 
 import { IIngredient, IPizza, ISize } from '@interfaces/pizza.interface';
 
@@ -9,7 +9,7 @@ import { BuilderPizzaService } from '../../services/builder-pizza.service';
   templateUrl: './options-pizza.component.html',
   styleUrls: ['./options-pizza.component.scss']
 })
-export class OptionsPizzaComponent implements OnInit {
+export class OptionsPizzaComponent implements OnInit, OnDestroy {
   @Output() newPizza: EventEmitter<any> = new EventEmitter();
 
   ingredients: IIngredient[];
@@ -17,6 +17,10 @@ export class OptionsPizzaComponent implements OnInit {
   itemSizeSelected: number = 0;
 
   constructor(private builderPizzaService: BuilderPizzaService) { }
+
+  ngOnDestroy(): void {
+    this.builderPizzaService.resetBuilder();
+  }
 
   ngOnInit(): void {
     this.loadData();
@@ -65,6 +69,10 @@ export class OptionsPizzaComponent implements OnInit {
 
   changeQuantity(quantity: number): void {
     this.builderPizzaService.changeQuantity(quantity);
+  }
+
+  get getQuantity(): number {
+    return this.builderPizzaService.getQuantity;
   }
 
   addPizzaToCart(): void {

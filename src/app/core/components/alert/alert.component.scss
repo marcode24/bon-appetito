@@ -1,0 +1,56 @@
+@import 'settings/_colors.scss';
+@import 'settings/_typography.scss';
+.alert {
+  position: absolute;
+  width: 75%;
+  border-radius: 30px;
+  padding: 0.8rem 1rem;
+  box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+  -webkit-box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+  -moz-box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+  opacity: 1;
+  pointer-events: none;
+  transform: translateY(-100px);
+  transition: 0.5s ease-in-out;
+
+  &.success {
+    background-color: $fc-4;
+  }
+
+  &.error {
+    background-color: $fc-1;
+  }
+
+  &.show {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  & .alert-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    @include fs-6;
+    @include fw-600;
+    color: $fc-3;
+
+    & .title {
+      width: 100%;
+      text-align: center;
+    }
+
+    & .icon {
+      width: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

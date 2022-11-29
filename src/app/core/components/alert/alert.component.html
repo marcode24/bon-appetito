@@ -1,0 +1,8 @@
+<div class="alert" #alert [ngClass]="alertOptions.type">
+  <div class="alert-content">
+    <span class="title">{{ alertOptions.message }}</span>
+    <div class="icon" (click)="hideAlert()">
+      <i class="fa fa-close"></i>
+    </div>
+  </div>
+</div>

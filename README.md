@@ -1,27 +1,43 @@
-# BonAppetito
+<div align="center">
+  <h1 align="center">Bon Appetito</h1>
+  <a href="https://bon-appetito.netlify.app/" target="_blank">View Demo</a>
+  <br/>
+</div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+## Get started
 
-## Development server
+### Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Git](https://git-scm.com/downloads)
+- [Angular](https://angular.io/cli)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-## Code scaffolding
+### Clone the repo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```shell
+git clone https://github.com/marcode24/bon-appetito
+cd bon-appetito
+```
 
-## Build
+### Install npm packages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Install the `npm` packages described in the `package.json` and verify that it works.
 
-## Running unit tests
+```shell
+npm install
+ng serve -o
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Shut it down manually with `Ctrl+C`
 
-## Running end-to-end tests
+## Environments
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| Name       | URL                                                                    | PORT |
+| ---------- | ---------------------------------------------------------------------- | ---- |
+| Localhost  | [localhost](http://localhost:4200)                                     | 4200 |
+| Production | [https://bon-appetito.netlify.app/](https://bon-appetito.netlify.app/) |
 
-## Further help
+## Previews
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![home](https://res.cloudinary.com/dfeujtobk/image/upload/v1669689035/Bon%20Appetito/preview_q6thws.png)
+![home](https://res.cloudinary.com/dfeujtobk/image/upload/v1669689036/Bon%20Appetito/payment_a6npef.png)

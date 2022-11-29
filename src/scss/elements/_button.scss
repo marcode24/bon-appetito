@@ -19,7 +19,6 @@
   padding: 0.5rem 0.8rem;
   border-radius: 1.2rem;
   color: #4d4d4d;
-  width: fit-content;
   height: 40px;
   transition: 0.3s;
   color: $fc-3;
@@ -45,4 +44,10 @@
 @mixin btn-secondary-disabled {
   cursor: not-allowed;
   background-color: rgba($fc-4, 0.4);
+}
+
+@mixin btn-transparent-disabled {
+  cursor: not-allowed;
+  background: transparent;
+  color: rgba($fc-1-light, 0.5);
 }

@@ -22,9 +22,15 @@
           <input [disabled]="hasSelectedEnoughItems(ingredient.name)" type="checkbox" name="check"
             (change)="changeSelection(ingredient)" [checked]="ingredient.selected" />
           <div class="label-text">
-            <div class="ingredient">
-              <span class="name">{{ingredient.name}}</span>
-              <span class="price">+ {{ ingredient.price | currency: '$' }}</span>
+            <div class="ingredient has-image">
+              <picture>
+                <img loading="lazy" [src]="'assets/images/ingredients/' + ingredient.pathImage"
+                  alt="{{ ingredient.name }}" />
+              </picture>
+              <div class="description">
+                <span class="name">{{ingredient.name}}</span>
+                <span class="price">+ {{ ingredient.price | currency: '$' }}</span>
+              </div>
             </div>
           </div>
         </label>
@@ -33,7 +39,7 @@
   </div>
   <div class="options">
     <app-counter style="flex-grow: 1;" [disable]="hasSelectedAtLeastOneIngredient"
-      (newQuantity)="changeQuantity($event)"></app-counter>
+      (newQuantity)="changeQuantity($event)" [quantity]="getQuantity"></app-counter>
     <button (click)="addPizzaToCart()" class="btn-add" [disabled]="hasSelectedAtLeastOneIngredient">
       Agregar {{ getTotalPizza | currency: '$'}}
     </button>

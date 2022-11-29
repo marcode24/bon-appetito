@@ -47,7 +47,6 @@ ul {
   }
 }
 
-
 .ingredients {
   display: flex;
   flex-direction: column;
@@ -94,24 +93,27 @@ ul {
   }
 }
 
-.options {
-  height: 80px;
-  max-height: 80px;
+button.btn-add {
+  width: 150px;
+}
 
-  .total-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column-reverse;
+.empty {
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 
-    & .title {
-      @include fs-3;
-      @include fw-600;
-    }
+  & .fa {
+    @include fs-4;
+    color: rgb($fc-1-light, 0.5);
+  }
 
-    & .subtitle {
-      @include fs-7;
-      @include fw-500;
-    }
+  & .empty-text {
+    @include fs-5;
+    @include fw-500;
+    text-align: center;
+    max-width: 60%;
   }
 }

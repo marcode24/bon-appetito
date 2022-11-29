@@ -7,6 +7,8 @@ import { BuildPizzaModule } from './build-pizza/build-pizza.module';
 import { CartModule } from './cart/cart.module';
 import { ComponentsModule } from '@components/components.module';
 import { HomeModule } from './home/home.module';
+import { PaymentModule } from './payment/payment.module';
+import { SharedModule } from 'app/shared/shared.module';
 
 import { FeaturesComponent } from './features.component';
 
@@ -15,13 +17,15 @@ import { FeaturesComponent } from './features.component';
     FeaturesComponent,
   ],
   imports: [
-    CommonModule,
     BrowserAnimationsModule,
-    RouterModule,
+    BuildPizzaModule,
+    CartModule,
+    CommonModule,
     ComponentsModule,
     HomeModule,
-    BuildPizzaModule,
-    CartModule
+    PaymentModule,
+    RouterModule,
+    SharedModule
   ]
 })
 export class FeaturesModule { }
