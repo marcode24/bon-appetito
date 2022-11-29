@@ -6,6 +6,7 @@ import { UserService } from '@services/user.service';
 
 import { ICart } from '@interfaces/cart.interface';
 import { IPaymentMehod } from '@interfaces/payment.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -25,7 +26,12 @@ export class PaymentComponent implements OnInit {
     private cartService: CartService,
     private userService: UserService,
     private alertService: AlertService,
-  ) { }
+    private router: Router,
+  ) {
+    if(this.cartService.cart.items.length === 0) {
+      this.router.navigate(['/cart']);
+    }
+  }
 
   ngOnInit(): void {
   }

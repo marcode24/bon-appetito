@@ -30,12 +30,17 @@
   & .alert-content {
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     @include fs-6;
     @include fw-600;
     color: $fc-3;
+
+    & .title {
+      width: 100%;
+      text-align: center;
+    }
 
     & .icon {
       width: 20px;

@@ -19,4 +19,6 @@ export interface IPizza {
   price: number;
   ingredients: IIngredient[];
   size: ISize;
+  name?: string;
+  pathImage?: string;
 }

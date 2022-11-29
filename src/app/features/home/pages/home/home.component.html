@@ -6,76 +6,14 @@
   <section class="pizzas">
     <span class="title">Popular</span>
     <div class="cards">
-      <div class="card">
+      <div class="card" *ngFor="let pizza of pizzas; let i = index">
         <figure>
-          <img
-            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="pizza-image" class="pizza-image">
+          <img [src]="'assets/images/pizzas/' + pizza.pathImage" [alt]="pizza.pathImage" class="pizza-image">
         </figure>
-        <span class="pizza-name">Sausage Pizza</span>
-        <span class="ingredients">sausage, cheese, tomato avefadfad</span>
+        <span class="pizza-name">{{ pizza.name }}</span>
+        <span class="ingredients">{{ buildDescription(i) }}</span>
         <div class="options">
-          <span class="price">$500.00</span>
-          <span class="cart">
-            <i class="fa fa-plus"></i>
-          </span>
-        </div>
-      </div>
-      <div class="card">
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="pizza-image" class="pizza-image">
-        </figure>
-        <span class="pizza-name">Sausage Pizza</span>
-        <span class="ingredients">sausage, cheese, tomato avefadfad</span>
-        <div class="options">
-          <span class="price">$500.00</span>
-          <span class="cart">
-            <i class="fa fa-plus"></i>
-          </span>
-        </div>
-      </div>
-      <div class="card">
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="pizza-image" class="pizza-image">
-        </figure>
-        <span class="pizza-name">Sausage Pizza</span>
-        <span class="ingredients">sausage, cheese, tomato avefadfad</span>
-        <div class="options">
-          <span class="price">$500.00</span>
-          <span class="cart">
-            <i class="fa fa-plus"></i>
-          </span>
-        </div>
-      </div>
-      <div class="card">
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="pizza-image" class="pizza-image">
-        </figure>
-        <span class="pizza-name">Sausage Pizza</span>
-        <span class="ingredients">sausage, cheese, tomato avefadfad</span>
-        <div class="options">
-          <span class="price">$500.00</span>
-          <span class="cart">
-            <i class="fa fa-plus"></i>
-          </span>
-        </div>
-      </div>
-      <div class="card">
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="pizza-image" class="pizza-image">
-        </figure>
-        <span class="pizza-name">Sausage Pizza</span>
-        <span class="ingredients">sausage, cheese, tomato avefadfad</span>
-        <div class="options">
-          <span class="price">$500.00</span>
+          <span class="price">{{ pizza.price | currency : '$' }}</span>
           <span class="cart">
             <i class="fa fa-plus"></i>
           </span>

@@ -29,6 +29,7 @@
       "@utils/*": ["app/core/utils/*"],
       "@services/*": ["app/core/services/*"],
       "@animations/*": ["app/core/animations/*"],
+      "@data/*": ["app/core/data/*"],
     },
   },
   "angularCompilerOptions": {

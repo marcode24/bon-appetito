@@ -25,6 +25,10 @@ export class UserService {
     return this.credits;
   }
 
+  get getCreditsFree(): number {
+    return this.creditsFree;
+  }
+
   discountCredits(quantity: number): void {
     this.loadCreditsFromStorage();
     this.credits -= quantity;

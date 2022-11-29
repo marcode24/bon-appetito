@@ -29,7 +29,6 @@ export class AlertComponent implements OnInit, OnDestroy {
   }
 
   showAlert(alert: IAlert): void {
-    console.log('muestra el alert');
     this.alertOptions = alert;
     this.alert.nativeElement.classList.add('show');
     setTimeout(() => {

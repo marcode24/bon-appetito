@@ -206,6 +206,46 @@
         }
       }
 
+      & .onions {
+        @include ingredient;
+
+        & .onion {
+          @include ingredient-image('/assets/images/ingredients/onion.png', 4.5rem);
+          @include ingredient-position(1, 13.5rem, 6.5rem);
+          @include ingredient-position(2, 5.5rem, 3.5rem);
+          @include ingredient-position(3, 10rem, 10.5rem);
+          @include ingredient-position(4, 10.5rem, 2.5rem);
+          @include ingredient-position(5, 5.5rem, 8.5rem);
+        }
+      }
+
+      & .bacons {
+        @include ingredient;
+
+        & .bacon {
+          @include ingredient-image('/assets/images/ingredients/bacon.png', 4.5rem);
+          @include ingredient-position(1, 6.5rem, 10.5rem);
+          @include ingredient-position(2, 7rem, 2rem);
+          @include ingredient-position(3, 4.5rem, 5.5rem);
+          @include ingredient-position(4, 11.5rem, 2rem);
+          @include ingredient-position(5, 14.5rem, 6rem);
+          @include ingredient-position(6, 11.5rem, 10.5rem);
+          @include ingredient-position(7, 9rem, 6.5rem);
+        }
+      }
+
+      & .pineapples {
+        @include ingredient;
+
+        & .pineapple {
+          @include ingredient-image('/assets/images/ingredients/pineapple.png', 4.5rem);
+          @include ingredient-position(1, 12.5rem, 9rem);
+          @include ingredient-position(2, 6rem, 3.5rem);
+          @include ingredient-position(3, 12rem, 3.5rem);
+          @include ingredient-position(4, 6.5rem, 9.5rem);
+        }
+      }
+
       & .hams {
         @include ingredient;
 

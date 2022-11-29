@@ -71,6 +71,10 @@ export class OptionsPizzaComponent implements OnInit, OnDestroy {
     this.builderPizzaService.changeQuantity(quantity);
   }
 
+  get getQuantity(): number {
+    return this.builderPizzaService.getQuantity;
+  }
+
   addPizzaToCart(): void {
     if(this.builderPizzaService.selectedIngredientsName.length < 1) return;
     const {  selectedIngredients, getTotalPizza, getQuantity } = this.builderPizzaService;

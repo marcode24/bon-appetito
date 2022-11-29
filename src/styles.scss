@@ -169,6 +169,19 @@
   background: $bg-scroll;
 }
 
+@mixin ingredient-description {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 0 auto 0 0;
+}
+
+@mixin ingredient-selection {
+  &::selection {
+    background: transparent;
+  }
+}
+
 label {
   cursor: pointer;
   color: #383A3F;
@@ -228,17 +241,39 @@ label {
   }
 
   & .ingredient {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    margin: 0 auto 0 0;
+    @include ingredient-description;
+
+    &:has(picture img) {
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    &:has(picture img) .description {
+      @include ingredient-description;
+    }
+
+    picture {
+      width: 30px;
+      height: 30px;
+      @include ingredient-selection;
+
+      & img {
+        object-fit: contain;
+        width: inherit;
+        height: inherit;
+      }
+
+
+    }
 
     & .name {
+      @include ingredient-selection;
       @include fs-7;
       @include fw-500;
     }
 
     & .price {
+      @include ingredient-selection;
       @include fs-6;
       @include fw-600;
     }

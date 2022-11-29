@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AlertService } from '@services/alert.service';
 import { CartService } from '@services/cart.service';
 import { UserService } from '@services/user.service';
 
@@ -14,7 +15,8 @@ export class CartComponent implements OnInit {
   cart: ICart;
   constructor(
     private cartService: CartService,
-    private userService: UserService
+    private userService: UserService,
+    private alertService: AlertService,
   ) { }
 
   ngOnInit(): void {
@@ -69,6 +71,8 @@ export class CartComponent implements OnInit {
 
   addCreditsFree(): void {
     this.userService.addCredits();
+    const freeCredits = this.userService.getCreditsFree;
+    this.alertService.emitAlert({ message: `Haz obtenido $${freeCredits} gratis`, type: 'success' });
   }
 
 }
