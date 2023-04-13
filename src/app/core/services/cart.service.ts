@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+
 import { ICart } from '@interfaces/cart.interface';
 import { IPizza } from '@interfaces/pizza.interface';
+
 import Storage from '@utils/storage.util';
 
 @Injectable({
@@ -8,7 +10,6 @@ import Storage from '@utils/storage.util';
 })
 export class CartService {
   cart: ICart;
-  constructor() { }
 
   addItem(pizza: IPizza) {
     this.loadCartFromStorage();
@@ -65,7 +66,5 @@ export class CartService {
     this.loadCartFromStorage();
     return this.cart;
   }
-
-
 
 }

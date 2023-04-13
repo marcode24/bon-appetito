@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { CartService } from '@services/cart.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class NavbarComponent {
   ) { }
 
   get hasItemsCart(): boolean {
-    return this.cartService.getCart.items.length > 0
+    return this.cartService.getCart.items.length > 0;
   }
 
 }

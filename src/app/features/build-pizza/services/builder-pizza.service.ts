@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { ingredients } from '@data/ingredients.data';
 import { sizes } from '@data/sizes.data';
+
 import { IIngredient, ISize } from '@interfaces/pizza.interface';
 
 interface IEventIngredient {
@@ -17,14 +18,12 @@ export class BuilderPizzaService {
   hideAllIngredients: EventEmitter<boolean> = new EventEmitter();
 
   ingredientsSelected: IIngredient[] = [];
-  private limitIngredients: number = 4;
-  private totalPizza: number = 0;
-  private quantity: number = 1;
+  private limitIngredients = 4;
+  private totalPizza = 0;
+  private quantity = 1;
 
   private ingredients: IIngredient[] = ingredients;
   private sizes: ISize[] = sizes;
-
-  constructor() { }
 
   resetBuilder(): void {
     this.ingredients.map(el => el.selected = false);
@@ -35,7 +34,7 @@ export class BuilderPizzaService {
 
   changeSelection(ingredient: IIngredient): void {
     const { selector, name: ingredientName, price } = ingredient;
-    let paramsEmitter: IEventIngredient = { selector, show: false };
+    const paramsEmitter: IEventIngredient = { selector, show: false };
     const indexIngredient = this.ingredients.findIndex(item => item.name === ingredientName);
     const selectedIngredient = !this.ingredients[indexIngredient].selected;
     if (this.hasSelectedEnoughItems) {

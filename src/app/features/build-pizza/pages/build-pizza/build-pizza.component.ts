@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { CartService } from '@services/cart.service';
 import { AlertService } from '@services/alert.service';
+import { CartService } from '@services/cart.service';
 
 import { IPizza } from '@interfaces/pizza.interface';
 
@@ -10,15 +10,12 @@ import { IPizza } from '@interfaces/pizza.interface';
   templateUrl: './build-pizza.component.html',
   styleUrls: ['./build-pizza.component.scss']
 })
-export class BuildPizzaComponent implements OnInit {
+export class BuildPizzaComponent {
 
   constructor(
     private cartService: CartService,
     private alertService: AlertService,
   ) { }
-
-  ngOnInit(): void {
-  }
 
   addPizzaToCart(newPizza: IPizza): void {
     this.cartService.addItem(newPizza);

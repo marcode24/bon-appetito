@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+
 import { Subscription } from 'rxjs';
+
 import { BuilderPizzaService } from '../../services/builder-pizza.service';
 
 @Component({
@@ -18,7 +20,10 @@ export class PreviewPizzaComponent implements OnInit, OnDestroy {
     this.subShowIngredients = this.builderPizza.showIngredient.subscribe(({ selector, show }) => {
       this.showIngredient(selector, show);
     });
-    this.subHideAllIngredients = this.builderPizza.hideAllIngredients.subscribe(hide => hide ? this.resetBuilder() : '');
+    this.subHideAllIngredients = this.builderPizza.hideAllIngredients.subscribe(hide => hide
+      ? this.resetBuilder()
+      : ''
+    );
   }
 
   ngOnDestroy(): void {

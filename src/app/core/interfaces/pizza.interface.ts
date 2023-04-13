@@ -4,7 +4,7 @@ export interface IIngredient {
   selected: boolean;
   selector: string;
   pathImage?: string;
-};
+}
 
 export interface ISize {
   sizeName: string;

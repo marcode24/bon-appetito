@@ -7,9 +7,7 @@ import Storage from '@utils/storage.util';
 })
 export class UserService {
   credits: number;
-  creditsFree: number = 500;
-
-  constructor() { }
+  creditsFree = 500;
 
   loadCreditsFromStorage(): void {
     this.credits = JSON.parse(Storage.getItem('credits')) as number || 0;

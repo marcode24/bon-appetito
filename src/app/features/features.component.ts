@@ -10,15 +10,9 @@ import { slider } from '@animations/route.animation';
     slider,
   ]
 })
-export class FeaturesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class FeaturesComponent {
   prepareRouter(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 
 }

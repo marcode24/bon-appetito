@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from 'app/shared/shared.module';
 
 import { OptionsPizzaComponent } from './options-pizza.component';
 
@@ -8,7 +9,12 @@ describe('OptionsPizzaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OptionsPizzaComponent ]
+      declarations: [
+        OptionsPizzaComponent
+      ],
+      imports: [
+        SharedModule
+      ],
     })
     .compileComponents();
   });
