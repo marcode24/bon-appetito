@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PaymentComponent } from './payment.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { SharedModule } from 'app/shared/shared.module';
 
 describe('PaymentComponent', () => {
   let component: PaymentComponent;
@@ -8,7 +10,11 @@ describe('PaymentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaymentComponent ]
+      declarations: [ PaymentComponent ],
+      imports: [
+        RouterTestingModule,
+        SharedModule
+      ]
     })
     .compileComponents();
   });

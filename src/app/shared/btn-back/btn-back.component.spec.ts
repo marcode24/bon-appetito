@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BtnBackComponent } from './btn-back.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('BtnBackComponent', () => {
   let component: BtnBackComponent;
@@ -8,7 +9,10 @@ describe('BtnBackComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BtnBackComponent ]
+      declarations: [ BtnBackComponent ],
+      imports: [
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   });
