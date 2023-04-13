@@ -40,13 +40,14 @@ export class CartComponent implements OnInit {
   }
 
   buildDescription(index: number): string {
-    let description: string = '';
+    let description = '';
     const ingredients = this.cart.items[index].ingredients;
     if(ingredients.length === 1) {
       return description += `${this.cart.items[index].ingredients[0].name}.`;
     }
-    ingredients
-      .forEach((el, index) => description += (index === ingredients.length - 1) ? `${el.name}. ` : `${el.name}, `);
+    ingredients.forEach((el, index) => description += (index === ingredients.length - 1)
+      ? `${el.name}. `
+      : `${el.name}, `);
     if(ingredients.length === 2) {
       return description.replace(',', ' y ');
     }
@@ -72,7 +73,10 @@ export class CartComponent implements OnInit {
   addCreditsFree(): void {
     this.userService.addCredits();
     const freeCredits = this.userService.getCreditsFree;
-    this.alertService.emitAlert({ message: `Haz obtenido $${freeCredits} gratis`, type: 'success' });
+    this.alertService.emitAlert({
+      message: `Haz obtenido $${freeCredits} gratis`,
+      type: 'success'
+    });
   }
 
 }

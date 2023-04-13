@@ -14,7 +14,7 @@ export class OptionsPizzaComponent implements OnInit, OnDestroy {
 
   ingredients: IIngredient[];
   sizes: ISize[];
-  itemSizeSelected: number = 0;
+  itemSizeSelected = 0;
 
   constructor(private builderPizzaService: BuilderPizzaService) { }
 
@@ -51,7 +51,8 @@ export class OptionsPizzaComponent implements OnInit, OnDestroy {
 
   hasSelectedEnoughItems(ingredientName: string): boolean {
     const { selectedIngredientsName, getLimitIngredients } = this.builderPizzaService;
-    return selectedIngredientsName.length === getLimitIngredients && !selectedIngredientsName.includes(ingredientName);
+    return selectedIngredientsName.length === getLimitIngredients
+      && !selectedIngredientsName.includes(ingredientName);
   }
 
   buildSizeName(index: number): string {

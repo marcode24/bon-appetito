@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { SharedModule } from 'app/shared/shared.module';
 
 import { CartComponent } from './cart.component';
-import { SharedModule } from 'app/shared/shared.module';
-import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CartComponent', () => {
   let component: CartComponent;

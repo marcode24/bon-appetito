@@ -1,6 +1,6 @@
 export default class Storage {
 
-  static getItem(key: string): string | any{
+  static getItem(key: string): string | any {
     return localStorage.getItem(key);
   }
 

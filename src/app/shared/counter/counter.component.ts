@@ -1,21 +1,16 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss']
 })
-export class CounterComponent implements OnInit {
-  @Input() disable: boolean = false;
-  @Input() cart: boolean = false;
-  @Input() quantity: number = 1;
+export class CounterComponent {
+  @Input() disable = false;
+  @Input() cart = false;
+  @Input() quantity = 1;
   @Output() newQuantity: EventEmitter<number> = new EventEmitter();
   @Output() delete: EventEmitter<boolean> = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   deleteItem(): void {
     this.delete.emit(true);

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from 'app/shared/shared.module';
 
 import { OptionsPizzaComponent } from './options-pizza.component';
-import { SharedModule } from 'app/shared/shared.module';
 
 describe('OptionsPizzaComponent', () => {
   let component: OptionsPizzaComponent;
