@@ -108,9 +108,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "bon-appetito"
+  "defaultProject": "bon-appetito",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
