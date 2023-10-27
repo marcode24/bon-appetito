@@ -1,6 +1,17 @@
 {
   "name": "bon-appetito",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "keywords": [
+    "angular",
+    "typescript",
+    "eslint",
+    "husky",
+    "lint-staged",
+    "prettier",
+    "pizza",
+    "restaurant",
+    "food"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
